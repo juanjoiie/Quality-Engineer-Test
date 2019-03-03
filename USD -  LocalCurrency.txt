@@ -1,0 +1,56 @@
+CountryName;USD_LC
+Algeria;117,6001
+Australia;1,35635
+Bahrain;0,3791
+Bangladesh;83,74
+Brunei;1,3581
+Bulgaria;1,6789
+Canada;1,3296
+China;6,5093
+Colombia;2953,5
+Denmark;6,3969
+Djibouti;178,5
+Egypt;17,92
+Europe;0,866701335
+Hong Kong;7,8657
+India;69,11
+Indonesia;14102
+Iraq;1200
+Israel;3,6184
+Japan;111,05
+Jordan;0,7103
+Kenya;100,9
+Kuwait;0,30259
+Lebanon;1521
+Macau;8,088
+Malaysia;4,071
+Mexico;20,309
+Morocco;9,515
+Myanmar;1374
+New Zealand;1,45796
+Norway;8,0905
+Oman;0,38502
+Pakistan;122,7
+Philippines;53,7
+Poland;3,7055
+Qatar;3,6425
+Romania;4,0083
+Russia;63,7873
+Saudi Arabia;3,76
+Singapore;1,3558
+South Korea;1119,8
+Sri Lanka;160,9279
+Sudan;0
+Sweden;8,866
+Switzerland;0,9899
+Taiwan;30,492
+Tanzania;2282
+Thailand;33,1
+Tunisia;2,5931
+Turkey;4,7345
+UAE;3,68
+United Kingdom;0,758955677
+Ukraine;26,26
+United States;1
+Vietnam;22900
+Yemen;250,2

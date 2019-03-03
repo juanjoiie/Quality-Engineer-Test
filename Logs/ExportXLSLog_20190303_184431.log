@@ -1,0 +1,162 @@
+2019/03/03 18:44:31 - Export summarized data to Excel - Opening transformation: [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/ETL_Quality_Engineer_Test_Export_XLS.ktr]
+2019/03/03 18:44:31 - Export summarized data to Excel - Loading transformation from XML file [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/ETL_Quality_Engineer_Test_Export_XLS.ktr]
+2019/03/03 18:44:31 - Export summarized data to Excel - Starting transformation...(file=${Internal.Entry.Current.Directory}/ETL_Quality_Engineer_Test_Export_XLS.ktr, name=Export summarized data to Excel, repinfo=null)
+2019/03/03 18:44:31 - Export summarized data to Excel - Using run configuration [Pentaho local]
+2019/03/03 18:44:31 - Export summarized data to Excel - Using legacy execution engine
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Transformation is pre-loaded.
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Dispatching started for transformation [ETL_Quality_Engineer_Test_Export_XLS]
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Nr of arguments detected:0 
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - This is not a replay transformation
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - I found 7 different steps to launch.
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Allocating rowsets...
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocating rowsets for step 0 --> Join country code
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Transformation allocated new rowset [Join country code.0 - Add total LC column.0]
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocated 1 rowsets for step 0 --> Join country code  
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocating rowsets for step 1 --> Add total LC column
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Transformation allocated new rowset [Add total LC column.0 - Set columns for summary file.0]
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocated 2 rowsets for step 1 --> Add total LC column  
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocating rowsets for step 2 --> Set columns for summary file
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Transformation allocated new rowset [Set columns for summary file.0 - Export Online Retail Sales Summary file.0]
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocated 3 rowsets for step 2 --> Set columns for summary file  
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocating rowsets for step 3 --> Export Online Retail Sales Summary file
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocated 3 rowsets for step 3 --> Export Online Retail Sales Summary file  
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocating rowsets for step 4 --> Get job variables
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS - Transformation allocated new rowset [Get job variables.0 - Add country data.0]
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocated 4 rowsets for step 4 --> Get job variables  
+2019/03/03 18:44:31 - ETL_Quality_Engineer_Test_Export_XLS -  Allocating rowsets for step 5 --> Add country data
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Transformation allocated new rowset [Add country data.0 - Join country code.0]
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Allocated 5 rowsets for step 5 --> Add country data  
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Allocating rowsets for step 6 --> Add local currency data
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Transformation allocated new rowset [Add local currency data.0 - Join country code.0]
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Allocated 6 rowsets for step 6 --> Add local currency data  
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Allocating Steps & StepData...
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation is about to allocate step [Join country code] of type [JoinRows]
+2019/03/03 18:44:32 - Join country code.0 - distribution de-activated
+2019/03/03 18:44:32 - Join country code.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:32 - Join country code.0 - Step info: nrinput=2 nroutput=1
+2019/03/03 18:44:32 - Join country code.0 - Got previous step from [Join country code] #0 --> Add local currency data
+2019/03/03 18:44:32 - Join country code.0 - input rel is 1:1
+2019/03/03 18:44:32 - Join country code.0 - Found input rowset [Add local currency data.0 - Join country code.0]
+2019/03/03 18:44:32 - Join country code.0 - Got previous step from [Join country code] #1 --> Add country data
+2019/03/03 18:44:32 - Join country code.0 - input rel is 1:1
+2019/03/03 18:44:32 - Join country code.0 - Found input rowset [Add country data.0 - Join country code.0]
+2019/03/03 18:44:32 - Join country code.0 - output rel. is  1:1
+2019/03/03 18:44:32 - Join country code.0 - Found output rowset [Join country code.0 - Add total LC column.0]
+2019/03/03 18:44:32 - Join country code.0 - Finished dispatching
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation has allocated a new step: [Join country code].0
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation is about to allocate step [Add total LC column] of type [Calculator]
+2019/03/03 18:44:32 - Add total LC column.0 - distribution activated
+2019/03/03 18:44:32 - Add total LC column.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:32 - Add total LC column.0 - Step info: nrinput=1 nroutput=1
+2019/03/03 18:44:32 - Add total LC column.0 - Got previous step from [Add total LC column] #0 --> Join country code
+2019/03/03 18:44:32 - Add total LC column.0 - input rel is 1:1
+2019/03/03 18:44:32 - Add total LC column.0 - Found input rowset [Join country code.0 - Add total LC column.0]
+2019/03/03 18:44:32 - Add total LC column.0 - output rel. is  1:1
+2019/03/03 18:44:32 - Add total LC column.0 - Found output rowset [Add total LC column.0 - Set columns for summary file.0]
+2019/03/03 18:44:32 - Add total LC column.0 - Finished dispatching
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation has allocated a new step: [Add total LC column].0
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation is about to allocate step [Set columns for summary file] of type [SelectValues]
+2019/03/03 18:44:32 - Set columns for summary file.0 - distribution activated
+2019/03/03 18:44:32 - Set columns for summary file.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:32 - Set columns for summary file.0 - Step info: nrinput=1 nroutput=1
+2019/03/03 18:44:32 - Set columns for summary file.0 - Got previous step from [Set columns for summary file] #0 --> Add total LC column
+2019/03/03 18:44:32 - Set columns for summary file.0 - input rel is 1:1
+2019/03/03 18:44:32 - Set columns for summary file.0 - Found input rowset [Add total LC column.0 - Set columns for summary file.0]
+2019/03/03 18:44:32 - Set columns for summary file.0 - output rel. is  1:1
+2019/03/03 18:44:32 - Set columns for summary file.0 - Found output rowset [Set columns for summary file.0 - Export Online Retail Sales Summary file.0]
+2019/03/03 18:44:32 - Set columns for summary file.0 - Finished dispatching
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation has allocated a new step: [Set columns for summary file].0
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation is about to allocate step [Export Online Retail Sales Summary file] of type [ExcelOutput]
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - distribution activated
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - Step info: nrinput=1 nroutput=0
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - Got previous step from [Export Online Retail Sales Summary file] #0 --> Set columns for summary file
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - input rel is 1:1
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - Found input rowset [Set columns for summary file.0 - Export Online Retail Sales Summary file.0]
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - Finished dispatching
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation has allocated a new step: [Export Online Retail Sales Summary file].0
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation is about to allocate step [Get job variables] of type [GetVariable]
+2019/03/03 18:44:32 - Get job variables.0 - distribution activated
+2019/03/03 18:44:32 - Get job variables.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:32 - Get job variables.0 - Step info: nrinput=0 nroutput=1
+2019/03/03 18:44:32 - Get job variables.0 - output rel. is  1:1
+2019/03/03 18:44:32 - Get job variables.0 - Found output rowset [Get job variables.0 - Add country data.0]
+2019/03/03 18:44:32 - Get job variables.0 - Finished dispatching
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation has allocated a new step: [Get job variables].0
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation is about to allocate step [Add country data] of type [TableInput]
+2019/03/03 18:44:32 - Add country data.0 - distribution activated
+2019/03/03 18:44:32 - Add country data.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:32 - Add country data.0 - Step info: nrinput=1 nroutput=1
+2019/03/03 18:44:32 - Add country data.0 - Got previous step from [Add country data] #0 --> Get job variables
+2019/03/03 18:44:32 - Add country data.0 - input rel is 1:1
+2019/03/03 18:44:32 - Add country data.0 - Found input rowset [Get job variables.0 - Add country data.0]
+2019/03/03 18:44:32 - Add country data.0 - output rel. is  1:1
+2019/03/03 18:44:32 - Add country data.0 - Found output rowset [Add country data.0 - Join country code.0]
+2019/03/03 18:44:32 - Add country data.0 - Finished dispatching
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation has allocated a new step: [Add country data].0
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation is about to allocate step [Add local currency data] of type [CsvInput]
+2019/03/03 18:44:32 - Add local currency data.0 - distribution activated
+2019/03/03 18:44:32 - Add local currency data.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:32 - Add local currency data.0 - Step info: nrinput=0 nroutput=1
+2019/03/03 18:44:32 - Add local currency data.0 - output rel. is  1:1
+2019/03/03 18:44:32 - Add local currency data.0 - Found output rowset [Add local currency data.0 - Join country code.0]
+2019/03/03 18:44:32 - Add local currency data.0 - Finished dispatching
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS -  Transformation has allocated a new step: [Add local currency data].0
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - This transformation can be replayed with replay date: 2019/03/03 18:44:32
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Initialising 7 steps...
+2019/03/03 18:44:32 - Join country code.0 - Released server socket on port 0
+2019/03/03 18:44:32 - Add total LC column.0 - Released server socket on port 0
+2019/03/03 18:44:32 - Set columns for summary file.0 - Released server socket on port 0
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - Released server socket on port 0
+2019/03/03 18:44:32 - Get job variables.0 - Released server socket on port 0
+2019/03/03 18:44:32 - Add country data.0 - Released server socket on port 0
+2019/03/03 18:44:32 - Add local currency data.0 - Released server socket on port 0
+2019/03/03 18:44:32 - Online Retail Sales - New database connection defined
+2019/03/03 18:44:32 - Add country data.0 - Connected to database...
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Step [Join country code.0] initialized flawlessly.
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Step [Add total LC column.0] initialized flawlessly.
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Step [Set columns for summary file.0] initialized flawlessly.
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Step [Export Online Retail Sales Summary file.0] initialized flawlessly.
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Step [Get job variables.0] initialized flawlessly.
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Step [Add country data.0] initialized flawlessly.
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Step [Add local currency data.0] initialized flawlessly.
+2019/03/03 18:44:32 - Set columns for summary file.0 - Starting to run...
+2019/03/03 18:44:32 - Join country code.0 - Starting to run...
+2019/03/03 18:44:32 - Add total LC column.0 - Starting to run...
+2019/03/03 18:44:32 - Get job variables.0 - Starting to run...
+2019/03/03 18:44:32 - Export Online Retail Sales Summary file.0 - Starting to run...
+2019/03/03 18:44:32 - Add country data.0 - Starting to run...
+2019/03/03 18:44:32 - ETL_Quality_Engineer_Test_Export_XLS - Transformation has allocated 7 threads and 6 rowsets.
+2019/03/03 18:44:32 - Add local currency data.0 - Starting to run...
+2019/03/03 18:44:32 - Add country data.0 - SQL query : SELECT CASE WHEN cty.Continent IS NULL THEN 'NOT AVAILABLE' ELSE cty.Continent END AS Continent,
+	   CASE WHEN cty.Region IS NULL THEN 'NOT AVAILABLE' ELSE cty.Region END AS Region,
+	   CASE WHEN cty.Code IS NULL THEN 'NOT AVAILABLE' ELSE cty.Code END AS CountryCode, 
+       sls.Country,
+       sls.FullName,
+       sls.InvoiceDate,
+       sls.TotalInvoices,
+       sls.TotalQty,
+       sls.TotalDue
+       FROM online_retail_sales.sales_summary AS sls
+LEFT JOIN world.country as cty
+ON sls.Country = cty.Name
+ORDER BY cty.Continent, cty.Region, cty.Code, sls.InvoiceDate ASC;
+2019/03/03 18:44:32 - Get job variables.0 - field [Input_Folder] has value [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Input]
+2019/03/03 18:44:32 - Add local currency data.0 - Header row skipped in file 'file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Input/USD -  LocalCurrency.txt'
+2019/03/03 18:44:32 - Get job variables.0 - field [Output_Folder] has value [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Output]
+2019/03/03 18:44:32 - Get job variables.0 - field [Local_Currency] has value [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Input/USD -  LocalCurrency.txt]
+2019/03/03 18:44:32 - Add local currency data.0 - Finished processing (I=56, O=0, R=0, W=55, U=0, E=0)
+2019/03/03 18:44:32 - Get job variables.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2019/03/03 18:44:35 - Add country data.0 - Finished reading query, closing connection.
+2019/03/03 18:44:35 - Online Retail Sales - Connection to database closed!
+2019/03/03 18:44:35 - Add country data.0 - Finished processing (I=11597, O=0, R=0, W=11597, U=0, E=0)
+2019/03/03 18:44:37 - Join country code.0 - Finished processing (I=0, O=0, R=11652, W=10612, U=0, E=0)
+2019/03/03 18:44:37 - Add total LC column.0 - Finished processing (I=0, O=0, R=10612, W=10612, U=0, E=0)
+2019/03/03 18:44:37 - Set columns for summary file.0 - Finished processing (I=0, O=0, R=10612, W=10612, U=0, E=0)
+2019/03/03 18:46:30 - Export Online Retail Sales Summary file.0 - Finished processing (I=0, O=10612, R=10612, W=10612, U=0, E=0)

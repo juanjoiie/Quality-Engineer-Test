@@ -1,0 +1,286 @@
+2019/03/03 18:44:12 - Load Retail Sales data intoDB - Opening transformation: [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/ETL_Quality_Engineer_Test_Main.ktr]
+2019/03/03 18:44:12 - Load Retail Sales data intoDB - Loading transformation from XML file [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/ETL_Quality_Engineer_Test_Main.ktr]
+2019/03/03 18:44:12 - Load Retail Sales data intoDB - Starting transformation...(file=${Internal.Job.Filename.Directory}/ETL_Quality_Engineer_Test_Main.ktr, name=Load Retail Sales data intoDB, repinfo=null)
+2019/03/03 18:44:12 - Load Retail Sales data intoDB - Using run configuration [Pentaho local]
+2019/03/03 18:44:12 - Load Retail Sales data intoDB - Using legacy execution engine
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation is pre-loaded.
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Dispatching started for transformation [ETL_Quality_Engineer_Test_Main]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Nr of arguments detected:0 
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - This is not a replay transformation
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - I found 12 different steps to launch.
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Allocating rowsets...
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 0 --> Extract Customers data
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Extract Customers data.0 - Concatenate names.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 1 rowsets for step 0 --> Extract Customers data  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 1 --> Concatenate names
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Concatenate names.0 - Lookup customer data.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 2 rowsets for step 1 --> Concatenate names  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 2 --> Lookup customer data
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Lookup customer data.0 - Create agreggated Retail Sales.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 3 rowsets for step 2 --> Lookup customer data  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 3 --> Add Total Due
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Add Total Due.0 - Lookup customer data.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 4 rowsets for step 3 --> Add Total Due  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 4 --> Create agreggated Retail Sales
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Create agreggated Retail Sales.0 - Export Online Retail Sales Summary to MySQL.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 5 rowsets for step 4 --> Create agreggated Retail Sales  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 5 --> Extract Online Retail Sales source
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Extract Online Retail Sales source.0 - Filter empty ids.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 6 rowsets for step 5 --> Extract Online Retail Sales source  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 6 --> Filter empty ids
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Filter empty ids.0 - Add Total Due.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Filter empty ids.0 - Export empty CustomerID.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 8 rowsets for step 6 --> Filter empty ids  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 7 --> Export empty CustomerID
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 8 rowsets for step 7 --> Export empty CustomerID  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 8 --> Export Online Retail Sales Summary to MySQL
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 8 rowsets for step 8 --> Export Online Retail Sales Summary to MySQL  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 9 --> Sales summary table exists?
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Sales summary table exists?.0 - Create sales summary table.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 9 rowsets for step 9 --> Sales summary table exists?  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 10 --> Create sales summary table
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 9 rowsets for step 10 --> Create sales summary table  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocating rowsets for step 11 --> Get job variables
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -   prevcopies = 1, nextcopies=1
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Transformation allocated new rowset [Get job variables.0 - Extract Online Retail Sales source.0]
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Allocated 10 rowsets for step 11 --> Get job variables  
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main - Allocating Steps & StepData...
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Extract Customers data] of type [ExcelInput]
+2019/03/03 18:44:12 - Extract Customers data.0 - distribution activated
+2019/03/03 18:44:12 - Extract Customers data.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:12 - Extract Customers data.0 - Step info: nrinput=0 nroutput=1
+2019/03/03 18:44:12 - Extract Customers data.0 - output rel. is  1:1
+2019/03/03 18:44:12 - Extract Customers data.0 - Found output rowset [Extract Customers data.0 - Concatenate names.0]
+2019/03/03 18:44:12 - Extract Customers data.0 - Finished dispatching
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Extract Customers data].0
+2019/03/03 18:44:12 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Concatenate names] of type [Formula]
+2019/03/03 18:44:13 - Concatenate names.0 - distribution activated
+2019/03/03 18:44:13 - Concatenate names.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Concatenate names.0 - Step info: nrinput=1 nroutput=1
+2019/03/03 18:44:13 - Concatenate names.0 - Got previous step from [Concatenate names] #0 --> Extract Customers data
+2019/03/03 18:44:13 - Concatenate names.0 - input rel is 1:1
+2019/03/03 18:44:13 - Concatenate names.0 - Found input rowset [Extract Customers data.0 - Concatenate names.0]
+2019/03/03 18:44:13 - Concatenate names.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Concatenate names.0 - Found output rowset [Concatenate names.0 - Lookup customer data.0]
+2019/03/03 18:44:13 - Concatenate names.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Concatenate names].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Lookup customer data] of type [StreamLookup]
+2019/03/03 18:44:13 - Lookup customer data.0 - distribution activated
+2019/03/03 18:44:13 - Lookup customer data.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Lookup customer data.0 - Step info: nrinput=2 nroutput=1
+2019/03/03 18:44:13 - Lookup customer data.0 - Got previous step from [Lookup customer data] #0 --> Concatenate names
+2019/03/03 18:44:13 - Lookup customer data.0 - input rel is 1:1
+2019/03/03 18:44:13 - Lookup customer data.0 - Found input rowset [Concatenate names.0 - Lookup customer data.0]
+2019/03/03 18:44:13 - Lookup customer data.0 - Got previous step from [Lookup customer data] #1 --> Add Total Due
+2019/03/03 18:44:13 - Lookup customer data.0 - input rel is 1:1
+2019/03/03 18:44:13 - Lookup customer data.0 - Found input rowset [Add Total Due.0 - Lookup customer data.0]
+2019/03/03 18:44:13 - Lookup customer data.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Lookup customer data.0 - Found output rowset [Lookup customer data.0 - Create agreggated Retail Sales.0]
+2019/03/03 18:44:13 - Lookup customer data.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Lookup customer data].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Add Total Due] of type [Calculator]
+2019/03/03 18:44:13 - Add Total Due.0 - distribution activated
+2019/03/03 18:44:13 - Add Total Due.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Add Total Due.0 - Step info: nrinput=1 nroutput=1
+2019/03/03 18:44:13 - Add Total Due.0 - Got previous step from [Add Total Due] #0 --> Filter empty ids
+2019/03/03 18:44:13 - Add Total Due.0 - input rel is 1:1
+2019/03/03 18:44:13 - Add Total Due.0 - Found input rowset [Filter empty ids.0 - Add Total Due.0]
+2019/03/03 18:44:13 - Add Total Due.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Add Total Due.0 - Found output rowset [Add Total Due.0 - Lookup customer data.0]
+2019/03/03 18:44:13 - Add Total Due.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Add Total Due].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Create agreggated Retail Sales] of type [GroupBy]
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - distribution activated
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Step info: nrinput=1 nroutput=1
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Got previous step from [Create agreggated Retail Sales] #0 --> Lookup customer data
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - input rel is 1:1
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Found input rowset [Lookup customer data.0 - Create agreggated Retail Sales.0]
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Found output rowset [Create agreggated Retail Sales.0 - Export Online Retail Sales Summary to MySQL.0]
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Create agreggated Retail Sales].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Extract Online Retail Sales source] of type [CsvInput]
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - distribution activated
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Step info: nrinput=1 nroutput=1
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Got previous step from [Extract Online Retail Sales source] #0 --> Get job variables
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - input rel is 1:1
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Found input rowset [Get job variables.0 - Extract Online Retail Sales source.0]
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Found output rowset [Extract Online Retail Sales source.0 - Filter empty ids.0]
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Extract Online Retail Sales source].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Filter empty ids] of type [FilterRows]
+2019/03/03 18:44:13 - Filter empty ids.0 - distribution activated
+2019/03/03 18:44:13 - Filter empty ids.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Filter empty ids.0 - Step info: nrinput=1 nroutput=2
+2019/03/03 18:44:13 - Filter empty ids.0 - Got previous step from [Filter empty ids] #0 --> Extract Online Retail Sales source
+2019/03/03 18:44:13 - Filter empty ids.0 - input rel is 1:1
+2019/03/03 18:44:13 - Filter empty ids.0 - Found input rowset [Extract Online Retail Sales source.0 - Filter empty ids.0]
+2019/03/03 18:44:13 - Filter empty ids.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Filter empty ids.0 - Found output rowset [Filter empty ids.0 - Add Total Due.0]
+2019/03/03 18:44:13 - Filter empty ids.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Filter empty ids.0 - Found output rowset [Filter empty ids.0 - Export empty CustomerID.0]
+2019/03/03 18:44:13 - Filter empty ids.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Filter empty ids].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Export empty CustomerID] of type [TextFileOutput]
+2019/03/03 18:44:13 - Export empty CustomerID.0 - distribution activated
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Step info: nrinput=1 nroutput=0
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Got previous step from [Export empty CustomerID] #0 --> Filter empty ids
+2019/03/03 18:44:13 - Export empty CustomerID.0 - input rel is 1:1
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Found input rowset [Filter empty ids.0 - Export empty CustomerID.0]
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Export empty CustomerID].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Export Online Retail Sales Summary to MySQL] of type [TableOutput]
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - distribution activated
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Step info: nrinput=1 nroutput=0
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Got previous step from [Export Online Retail Sales Summary to MySQL] #0 --> Create agreggated Retail Sales
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - input rel is 1:1
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Found input rowset [Create agreggated Retail Sales.0 - Export Online Retail Sales Summary to MySQL.0]
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Export Online Retail Sales Summary to MySQL].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Sales summary table exists?] of type [TableExists]
+2019/03/03 18:44:13 - Sales summary table exists?.0 - distribution de-activated
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Step info: nrinput=0 nroutput=1
+2019/03/03 18:44:13 - Sales summary table exists?.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Found output rowset [Sales summary table exists?.0 - Create sales summary table.0]
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Sales summary table exists?].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Create sales summary table] of type [ExecSQL]
+2019/03/03 18:44:13 - Create sales summary table.0 - distribution activated
+2019/03/03 18:44:13 - Create sales summary table.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Create sales summary table.0 - Step info: nrinput=1 nroutput=0
+2019/03/03 18:44:13 - Create sales summary table.0 - Got previous step from [Create sales summary table] #0 --> Sales summary table exists?
+2019/03/03 18:44:13 - Create sales summary table.0 - input rel is 1:1
+2019/03/03 18:44:13 - Create sales summary table.0 - Found input rowset [Sales summary table exists?.0 - Create sales summary table.0]
+2019/03/03 18:44:13 - Create sales summary table.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Create sales summary table].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation is about to allocate step [Get job variables] of type [GetVariable]
+2019/03/03 18:44:13 - Get job variables.0 - distribution activated
+2019/03/03 18:44:13 - Get job variables.0 - Starting allocation of buffers & new threads...
+2019/03/03 18:44:13 - Get job variables.0 - Step info: nrinput=0 nroutput=1
+2019/03/03 18:44:13 - Get job variables.0 - output rel. is  1:1
+2019/03/03 18:44:13 - Get job variables.0 - Found output rowset [Get job variables.0 - Extract Online Retail Sales source.0]
+2019/03/03 18:44:13 - Get job variables.0 - Finished dispatching
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main -  Transformation has allocated a new step: [Get job variables].0
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - This transformation can be replayed with replay date: 2019/03/03 18:44:13
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Initialising 12 steps...
+2019/03/03 18:44:13 - Concatenate names.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Extract Customers data.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Add Total Due.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Lookup customer data.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Create sales summary table.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Get job variables.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Filter empty ids.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Released server socket on port 0
+2019/03/03 18:44:13 - Online Retail Sales - New database connection defined
+2019/03/03 18:44:13 - Online Retail Sales - New database connection defined
+2019/03/03 18:44:13 - Online Retail Sales - New database connection defined
+2019/03/03 18:44:13 - Export empty CustomerID.0 - We can not find parent folder [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Output]!
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Folder [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Output] was created.
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Connected to database [Online Retail Sales] (commit=10000)
+2019/03/03 18:44:13 - Online Retail Sales - Auto commit off
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Opening output stream using provider: None
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Connected to database...
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Opening output stream in default encoding
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Opened new file with name [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Output/Empty Customer data.txt]
+2019/03/03 18:44:13 - Create sales summary table.0 - Connected to database...
+2019/03/03 18:44:13 - Online Retail Sales - launch DDL statement: 
+2019/03/03 18:44:13 - Online Retail Sales - CREATE TABLE IF NOT EXISTS `online_retail_sales`.`sales_summary`(
+  `InvoiceDate` TINYTEXT
+, `FullName` VARCHAR(30)
+, `Country` VARCHAR(20)
+, `TotalInvoices` BIGINT
+, `TotalQty` INT
+, `TotalDue` DOUBLE)
+2019/03/03 18:44:13 - Online Retail Sales - 1 statement executed
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Extract Customers data.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Concatenate names.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Lookup customer data.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Add Total Due.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Create agreggated Retail Sales.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Extract Online Retail Sales source.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Filter empty ids.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Export empty CustomerID.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Export Online Retail Sales Summary to MySQL.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Sales summary table exists?.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Create sales summary table.0] initialized flawlessly.
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Step [Get job variables.0] initialized flawlessly.
+2019/03/03 18:44:13 - Extract Customers data.0 - Starting to run...
+2019/03/03 18:44:13 - Concatenate names.0 - Starting to run...
+2019/03/03 18:44:13 - Lookup customer data.0 - Starting to run...
+2019/03/03 18:44:13 - Add Total Due.0 - Starting to run...
+2019/03/03 18:44:13 - Create agreggated Retail Sales.0 - Starting to run...
+2019/03/03 18:44:13 - Filter empty ids.0 - Starting to run...
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Starting to run...
+2019/03/03 18:44:13 - Extract Customers data.0 - Opening openFile #0 : C:\Users\JJ\Documents\Quality_Engineer_Test\Input\Customers.xls
+2019/03/03 18:44:13 - Export empty CustomerID.0 - Starting to run...
+2019/03/03 18:44:13 - ETL_Quality_Engineer_Test_Main - Transformation has allocated 12 threads and 10 rowsets.
+2019/03/03 18:44:13 - Export Online Retail Sales Summary to MySQL.0 - Starting to run...
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Starting to run...
+2019/03/03 18:44:13 - Create sales summary table.0 - Starting to run...
+2019/03/03 18:44:13 - Get job variables.0 - Starting to run...
+2019/03/03 18:44:13 - Create sales summary table.0 - Finished reading query, closing connection.
+2019/03/03 18:44:13 - Lookup customer data.0 - Reading from stream [Concatenate names]
+2019/03/03 18:44:13 - Get job variables.0 - field [Source_File] has value [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Input/Online Retail - GitHub Scheckley.csv]
+2019/03/03 18:44:13 - Online Retail Sales - Connection to database closed!
+2019/03/03 18:44:13 - Online Retail Sales - Connection to database closed!
+2019/03/03 18:44:13 - Sales summary table exists?.0 - Finished processing (I=0, O=0, R=0, W=0, U=0, E=0)
+2019/03/03 18:44:13 - Create sales summary table.0 - Finished processing (I=0, O=0, R=0, W=1, U=0, E=0)
+2019/03/03 18:44:13 - Get job variables.0 - field [Customer_File] has value [file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Input/Customers.xls]
+2019/03/03 18:44:13 - Get job variables.0 - field [Data_Base] has value [online_retail_sales]
+2019/03/03 18:44:13 - Get job variables.0 - field [Table_Name] has value [sales_summary]
+2019/03/03 18:44:13 - Get job variables.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Reading from 1 files.
+2019/03/03 18:44:13 - Extract Online Retail Sales source.0 - Header row skipped in file 'file:///C:/Users/JJ/Documents/Quality_Engineer_Test/Input/Online Retail - GitHub Scheckley.csv'
+2019/03/03 18:44:17 - Extract Customers data.0 - No more files to be processed! (1 files done)
+2019/03/03 18:44:17 - Extract Customers data.0 - Finished processing (I=4372, O=0, R=0, W=4372, U=0, E=0)
+2019/03/03 18:44:18 - Concatenate names.0 - Finished processing (I=0, O=0, R=4372, W=4372, U=0, E=0)
+2019/03/03 18:44:18 - Lookup customer data.0 - Field [CustomerID] has nr [6]
+2019/03/03 18:44:18 - Export Online Retail Sales Summary to MySQL.0 - Prepared statement : INSERT INTO online_retail_sales.sales_summary (InvoiceDate, FullName, Country, TotalInvoices, TotalQty, TotalDue) VALUES ( ?,  ?,  ?,  ?,  ?,  ?)
+2019/03/03 18:44:19 - Extract Online Retail Sales source.0 - Line number : 50000
+2019/03/03 18:44:19 - Filter empty ids.0 - linenr 50000
+2019/03/03 18:44:21 - Add Total Due.0 - Linenr 50000
+2019/03/03 18:44:21 - Extract Online Retail Sales source.0 - Line number : 100000
+2019/03/03 18:44:21 - Lookup customer data.0 - linenr 50000
+2019/03/03 18:44:21 - Filter empty ids.0 - linenr 100000
+2019/03/03 18:44:22 - Create agreggated Retail Sales.0 - Linenr 50000
+2019/03/03 18:44:23 - Extract Online Retail Sales source.0 - Line number : 150000
+2019/03/03 18:44:23 - Filter empty ids.0 - linenr 150000
+2019/03/03 18:44:23 - Export empty CustomerID.0 - linenr 50000
+2019/03/03 18:44:23 - Add Total Due.0 - Linenr 100000
+2019/03/03 18:44:23 - Lookup customer data.0 - linenr 100000
+2019/03/03 18:44:23 - Create agreggated Retail Sales.0 - Linenr 100000
+2019/03/03 18:44:23 - Extract Online Retail Sales source.0 - Line number : 200000
+2019/03/03 18:44:24 - Filter empty ids.0 - linenr 200000
+2019/03/03 18:44:24 - Add Total Due.0 - Linenr 150000
+2019/03/03 18:44:24 - Lookup customer data.0 - linenr 150000
+2019/03/03 18:44:24 - Extract Online Retail Sales source.0 - Line number : 250000
+2019/03/03 18:44:24 - Create agreggated Retail Sales.0 - Linenr 150000
+2019/03/03 18:44:24 - Filter empty ids.0 - linenr 250000
+2019/03/03 18:44:25 - Extract Online Retail Sales source.0 - Finished processing (I=274636, O=0, R=1, W=274635, U=0, E=0)
+2019/03/03 18:44:25 - Filter empty ids.0 - Finished processing (I=0, O=0, R=274635, W=274635, U=0, E=0)
+2019/03/03 18:44:25 - Add Total Due.0 - Finished processing (I=0, O=0, R=191494, W=191494, U=0, E=0)
+2019/03/03 18:44:25 - Export empty CustomerID.0 - Finished processing (I=0, O=83142, R=83141, W=83141, U=0, E=0)
+2019/03/03 18:44:25 - Lookup customer data.0 - Stopped processing with empty row after 195866 rows.
+2019/03/03 18:44:25 - Lookup customer data.0 - Finished processing (I=0, O=0, R=195866, W=191494, U=0, E=0)
+2019/03/03 18:44:25 - Create agreggated Retail Sales.0 - Finished processing (I=0, O=0, R=191494, W=11597, U=0, E=0)
+2019/03/03 18:44:31 - Online Retail Sales - Connection to database closed!
+2019/03/03 18:44:31 - Export Online Retail Sales Summary to MySQL.0 - Finished processing (I=0, O=11597, R=11597, W=11597, U=0, E=0)

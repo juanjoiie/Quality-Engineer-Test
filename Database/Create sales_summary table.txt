@@ -1,0 +1,8 @@
+CREATE TABLE `sales_summary` (
+  `InvoiceDate` tinytext,
+  `FullName` varchar(30) DEFAULT NULL,
+  `Country` varchar(20) DEFAULT NULL,
+  `TotalInvoices` bigint(20) DEFAULT NULL,
+  `TotalQty` int(11) DEFAULT NULL,
+  `TotalDue` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
