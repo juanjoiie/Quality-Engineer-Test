@@ -1,7 +1,7 @@
 # Quality-Engineer-Test
 Repository created and shared for quality engineer position
 
-The project contains 5 Folders and 9 Files, most of them are generated during the job and transformations executions.
+Currently the repository contains 5 Folders and 11 Files, most of them are generated during the job and transformations executions.
 
 - The required files used for this process are:
 Source Files
@@ -29,7 +29,8 @@ Batch file (optional)
     
 SoapUI Files
   * Testing - Quality Engineer-readyapi-project.xml - Main project file 
-  * SoapUI Testing folder - Generated folder which contains all the TESTs for this project. 
+  * SoapUI Testing folder - Generated folder which contains all the TESTs for this project.
+  * Testing Quality Engineer Report.pdf - Generated report after running all tests (The fail steps were set to validate error messages)
     
 ** The Database folder is optional; it contains the database connection script, the CREATE TABLE statement in MySQL for the table used 
    to transfer the records and a snapshot of the database table with the loaded data by the process.
