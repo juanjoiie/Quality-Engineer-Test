@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="cfcee28c-ac5a-462c-bb58-0b277b92b338" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Output Sources" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:description>The Output Sources Test Case contains Test Steps which are used a source connection to validate the data directly and check if the generated file by the process have content</con:description><con:settings><con:setting id="cfcee28c-ac5a-462c-bb58-0b277b92b338fileName">Output-Sources</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="EmptyCustomer" id="cb13c753-d6df-47af-b59f-6f864668d13f"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>C:/Users/JJ/Documents/Quality_Engineer_Test/Output/Empty Customer data.txt</fileName><separator>,</separator><trim>true</trim><charset>UTF-8</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>InvoiceNo</con:property><con:property>StockCode</con:property><con:property>Description</con:property><con:property>Quantity</con:property><con:property>InvoiceDate</con:property><con:property>UnitPrice</con:property><con:property>CustomerID</con:property><con:property>Country</con:property><con:startRow>1</con:startRow><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:failOnEmpty>true</con:failOnEmpty><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:testStep type="groovy" name="CountryEmptyContent" id="ac65a9c1-5366-48a2-855a-20982c65aeb7"><con:settings/><con:config><script>//Get property value and create variable to count elements
+def Customer = context.testCase.getPropertyValue('EmptyCustomer') 
+def count = 0
+
+//Count number of lines
+File file = new File(Customer)
+def lines = file.readLines()
+for (line in lines) {
+   count++
+}
+
+//Validate if data exists
+count >0 ? log.info ("File '" + Customer + "' is not empty")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="datasource" name="Online Retail Summary" id="1af297b7-6b0a-4ac9-9231-0a64e93fcbd3"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>C:/Users/JJ/Documents/Quality_Engineer_Test/Output/Online Retail Sales Summary.xls</file><worksheet/><cell>A1</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>Continent</con:property><con:property>Region</con:property><con:property>CountryCode</con:property><con:property>Country</con:property><con:property>FullName</con:property><con:property>InvoiceDate</con:property><con:property>TotalInvoices</con:property><con:property>TotalQty</con:property><con:property>TotalDue</con:property><con:property>TotalLC</con:property><con:startRow>1</con:startRow><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:failOnEmpty>true</con:failOnEmpty><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:testStep type="groovy" name="OnlineRetailCountContent" id="287dd41c-fddd-4ecf-a95c-a34a519fe863"><con:settings/><con:config><script>//Import libraries
+import jxl.*
+import jxl.write.*
+
+//Get property value and create variable to count elements
+def Summary = context.testCase.getPropertyValue('SalesSummary')
+def count
+
+//Count number of rows
+Workbook RetailSummary = Workbook.getWorkbook(new File(Summary))
+Sheet SummarySheet = RetailSummary.getSheet(0)
+count= SummarySheet.getRows().toInteger()
+RetailSummary.close()
+
+//Validate if data exists
+count >0 ? log.info ("File '" + Summary + "' is not empty")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties><con:property><con:name>EmptyCustomer</con:name><con:value>C:/Users/JJ/Documents/Quality_Engineer_Test/Output/Empty Customer data.txt</con:value></con:property><con:property><con:name>SalesSummary</con:name><con:value>C:/Users/JJ/Documents/Quality_Engineer_Test/Output/Online Retail Sales Summary.xls</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>287dd41c-fddd-4ecf-a95c-a34a519fe863</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>cb13c753-d6df-47af-b59f-6f864668d13f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>1af297b7-6b0a-4ac9-9231-0a64e93fcbd3</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

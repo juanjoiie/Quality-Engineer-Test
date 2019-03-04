@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="7685a236-3517-490e-b050-df16245a03af" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Batch Log" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:description>The Batch Log Test Case contains a Test Step to validate if after the .bat file was executed the associated log file was created</con:description><con:settings><con:setting id="7685a236-3517-490e-b050-df16245a03affileName">Batch-Log</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateBatchLogFile" id="96fbe414-6bce-4749-ab3a-cea9f2484556"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def BatchPath = context.testCase.testSuite.getPropertyValue('BatchLogPath')
+File Batch = new File(BatchPath)
+
+//Validate if file exists
+Batch.isFile() ? log.info ("Path '" + BatchPath + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

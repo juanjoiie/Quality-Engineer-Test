@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="982f9df2-bf51-4e57-bf2b-1f8bfdb7fc37" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Batch Job" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:description>The Batch Job Test Case contains Test Steps to run and validate the availability of the created batch job for the job and transformations execution</con:description><con:settings><con:setting id="982f9df2-bf51-4e57-bf2b-1f8bfdb7fc37fileName">Batch-Job</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateBatchFile" id="61d8b7a2-3152-4f7d-be43-7f5d042031ce"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Batch = context.testCase.getPropertyValue('BatchPath')
+File BatchFile = new File(Batch)
+
+//Validate if file exists
+BatchFile.isFile() ? log.info ("Path '" + Batch + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ExecuteBatchFile" id="783c9ae9-1843-4d3b-8d34-b46738701070" disabled="true"><con:settings/><con:config><script>//Get property value
+def BatchPath = "C:/Users/JJ/Documents/Quality_Engineer_Test//ETL_Quality_Engineer_Test.bat"
+def Batch = "cmd /c start " + BatchPath
+
+//Launching batch job
+Process proc=Runtime.getRuntime().exec(Batch) 
+proc.waitFor()</script></con:config></con:testStep><con:properties><con:property><con:name>BatchPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\ETL_Quality_Engineer_Test.bat</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>61d8b7a2-3152-4f7d-be43-7f5d042031ce</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

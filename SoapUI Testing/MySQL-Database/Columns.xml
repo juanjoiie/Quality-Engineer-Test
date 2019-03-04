@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="5a24b4ce-2bbc-4f2e-be4b-ada0529f1a89" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Columns" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:description>The Columns Test Case contains Test Steps to test if the database columns were set correctly and they remain as expected and set at the begining</con:description><con:settings><con:setting id="5a24b4ce-2bbc-4f2e-be4b-ada0529f1a89fileName">Columns</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="jdbc" name="ColumnsPositions" id="43b2091e-e6a9-400e-b5c7-591224cceb0c"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT COLUMN_NAME FROM information_schema.columns 
+WHERE table_name='sales_summary'</con:query><con:assertion type="GroovyScriptAssertion" id="089d7723-882e-42d4-a76e-f01f4dde5fb3" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Create variables
+def Position = 3
+def Column = 'InvoiceDate'
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml)
+def ColumnName = holder.getNodeValue('//Results/ResultSet/Row['+Position+']/COLUMNS.COLUMN_NAME')
+
+//Set assert
+assert ColumnName.toString() == Column</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="6e9b88bb-d314-4dba-9340-13bce5c5e4ba" name="Script Assertion 2"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Create variables
+def Position = 2
+def Column = 'Country'
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml)
+def ColumnName = holder.getNodeValue('//Results/ResultSet/Row['+Position+']/COLUMNS.COLUMN_NAME')
+
+//Set assert
+assert ColumnName.toString() == Column</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="ColumnsCount" id="5d2c2ca1-ac41-47a9-a1f9-b02d20a29acd"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT COUNT(COLUMN_NAME) FROM information_schema.columns 
+WHERE table_name='sales_summary'</con:query><con:assertion type="Simple Contains" id="f65d83cc-2cbf-443a-adbb-c3552b9f33c9" name="Contains"><con:configuration><token>6</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase>

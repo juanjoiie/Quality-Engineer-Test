@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="8862d40e-8587-4e74-9f19-79c8be732f03" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Input Folder" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:description>The Input Folder Test Case contains Test Steps to test if the respective source files and folder are available after the process execution</con:description><con:settings><con:setting id="8862d40e-8587-4e74-9f19-79c8be732f03fileName">Input-Folder</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateInputFolder" id="d4c914f9-fd23-4763-a8bc-7e85dc2a3106"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input = new File(Path)
+
+//Validate if folder exists
+Input.isDirectory() ? log.info ("Path '" + Path + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateOnlineRetailFile" id="88ebc2fd-c72b-4b29-820a-cde47af3c414"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Online Retail - GitHub Scheckley.csv'
+Input.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateLocalCurrencyFile" id="94ab22c9-2edf-4760-a112-31a1b8348013"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'USD -  LocalCurrency.txt'
+Input.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateCustomerFile" id="d1aa887b-967c-414c-83b4-4602b220e7b5"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Customers.xls'
+Input.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties><con:property><con:name>InputPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\Input\</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>d1aa887b-967c-414c-83b4-4602b220e7b5</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

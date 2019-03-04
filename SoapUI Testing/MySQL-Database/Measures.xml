@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="982df6ce-34d2-4ae6-a553-d71c1a310af6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Measures" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:description>The Measures Test Case contains Test Steps to test the database numeric columns to make sure the ingested data are correct in terms of excpected values e.g. Postive sales</con:description><con:settings><con:setting id="982df6ce-34d2-4ae6-a553-d71c1a310af6fileName">Measures</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="jdbc" name="TotalInvoices" id="7b4a2b37-d854-49d6-9538-d051d7055190"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT MIN(TotalInvoices)
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="59f576a8-d80c-46fd-8882-db41ed52f438" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalInv = holder.getNodeValue('//Results/ResultSet/Row/MINTOTALINVOICES')
+
+//Set assert
+assert totalInv.toInteger() > 0</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="TotalQty" id="203d8a19-6cd4-4a1e-9f06-dcef9839c670"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT MIN(TotalQty)
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="5d8a2d35-80fe-41cc-863a-9620949d2ee5" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalQty = holder.getNodeValue('//Results/ResultSet/Row/MINTOTALQTY')
+
+//Set assert
+assert totalQty.toInteger() > 0</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="TotalDue" id="3a3432b8-1871-4f04-961c-57ced44ab201"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT MIN(TotalDue)
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="79e3fd95-775b-40e7-9249-dd2df3ec24ea" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalDue = holder.getNodeValue('//Results/ResultSet/Row/MINTOTALDUE')
+
+//Set assert
+assert totalDue.toInteger() &lt; 0</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>203d8a19-6cd4-4a1e-9f06-dcef9839c670</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7b4a2b37-d854-49d6-9538-d051d7055190</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

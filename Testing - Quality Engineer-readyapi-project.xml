@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d2ef2a36-9d37-4a72-be50-5e4071834212" activeEnvironment="Default environment" name="Testing - Quality Engineer" resourceRoot="${projectDir}" soapui-version="5.5.0" encryptionMode="Not encrypted" updated="2.6.0 2019-01-14T14:47:06Z" runType="SEQUENTIAL" savePropertyValues="true" xmlns:con="http://eviware.com/soapui/config"><con:description>The Testing Quality Engineer project has been created to write several tests through this automated tool as a requirement of an application process for a QA position.
+It involves the test of a result from a ETL process in Pentaho which uses source data in CSV, XLS and TXT files and insert these data into a database, also it produce 
+a XLS summary file with additional information. The project goal is to cover most of the required validations broken down by Test Suites.</con:description><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">true</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value="XML"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Slack Channel(s)" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Test Suite Tags" value=""/>
+  <con:entry key="Select Report Type" value="JUnit-Style report for automation"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Test Suite" value="ETL - Pentaho job"/>
+  <con:entry key="Run in-process" value="false"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Test Case Tags" value=""/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Test Case" value="&lt;all>"/>
+  <con:entry key="Slack Access Token" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Program Files\SmartBear\ReadyAPI-2.6.0\bin"/>
+  <con:entry key="Environment" value="Default environment"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="${WORKSPACE}"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting><con:setting id="d2ef2a36-9d37-4a72-be50-5e4071834212fileName">Testing---Quality-Engineer-soapui-project</con:setting><con:setting id="GeneratableJUnitReport@Style">Single Page (Print)</con:setting><con:setting id="GeneratableJUnitReport@Folder">C:\Users\JJ\Documents</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer><con:databaseConnection><con:name>MySQL DB</con:name><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/></con:databaseConnection></con:databaseConnectionContainer><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:reportTemplates>
+  <con:name>sAMPLE</con:name>
+  <con:reportType>TESTSUITE</con:reportType>
+  <con:reportLevel>MAINREPORT</con:reportLevel>
+  <con:data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><![CDATA[<jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportTemplate" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <property name="ireport.encoding" value="UTF-8"/>
+   <template>"../../styles.jrtx"</template>
+   <!--FIELDS & PARAMS-->
+   <title>
+      <band height="70">
+         <textField>
+            <reportElement x="159" y="13" width="229" height="42"/>
+            <textElement>
+               <font size="26"/>
+            </textElement>
+            <textFieldExpression class="java.lang.String">$F{name} + " Report"</textFieldExpression>
+         </textField>
+      </band>
+   </title>
+   <pageHeader>
+      <band/>
+   </pageHeader>
+   <detail>
+      <band height="122">
+         <!--SUBREPORTS UNDER HERE-->
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{FailedTestSteps}</dataSourceExpression>
+            <subreportExpression>"subreport:FailedTestStepsReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{ReportMetrics}</dataSourceExpression>
+            <subreportExpression>"subreport:MetricsReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{ProjectCoverage}</dataSourceExpression>
+            <subreportExpression>"subreport:ProjectCoverageChart"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{ProjectTestSuiteResults}</dataSourceExpression>
+            <subreportExpression>"subreport:ProjectTestSuiteResultsOverviewReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{ProjectTestSuiteResults}</dataSourceExpression>
+            <subreportExpression>"subreport:ProjectTestSuiteResultsReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestProperties}</dataSourceExpression>
+            <subreportExpression>"subreport:PropertiesReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{RequirementLinkedTestCases}</dataSourceExpression>
+            <subreportExpression>"subreport:RequirementLinkedTestCasesReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestProperties}</dataSourceExpression>
+            <subreportExpression>"subreport:RequirementsReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{SecurityScanResults}</dataSourceExpression>
+            <subreportExpression>"subreport:SecurityScanReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{SecurityTestStepOverviewResults}</dataSourceExpression>
+            <subreportExpression>"subreport:SecurityTestStepOverviewReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{SecurityTestStepResults}</dataSourceExpression>
+            <subreportExpression>"subreport:SecurityTestStepReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{SecurityTestStepScanListResults}</dataSourceExpression>
+            <subreportExpression>"subreport:SecurityTestStepScanListReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestCaseCoverage}</dataSourceExpression>
+            <subreportExpression>"subreport:TestCaseCoverageChart"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestStepParameters}</dataSourceExpression>
+            <subreportExpression>"subreport:TestStepParametersReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestStepResults}</dataSourceExpression>
+            <subreportExpression>"subreport:TestStepResultsReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestStepSubParameters}</dataSourceExpression>
+            <subreportExpression>"subreport:TestStepSubParametersReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="500" height="30"/>
+            <dataSourceExpression>$P{TestSuiteCoverage}</dataSourceExpression>
+            <subreportExpression>"subreport:TestSuiteCoverageChart"</subreportExpression>
+         </subreport>
+      </band>
+   </detail>
+</jasperReport>]]></con:data>
+  <con:subreports>FailedTestStepsReport</con:subreports>
+  <con:subreports>MetricsReport</con:subreports>
+  <con:subreports>ProjectCoverageChart</con:subreports>
+  <con:subreports>ProjectTestSuiteResultsOverviewReport</con:subreports>
+  <con:subreports>ProjectTestSuiteResultsReport</con:subreports>
+  <con:subreports>PropertiesReport</con:subreports>
+  <con:subreports>RequirementLinkedTestCasesReport</con:subreports>
+  <con:subreports>RequirementsReport</con:subreports>
+  <con:subreports>SecurityScanReport</con:subreports>
+  <con:subreports>SecurityTestStepOverviewReport</con:subreports>
+  <con:subreports>SecurityTestStepReport</con:subreports>
+  <con:subreports>SecurityTestStepScanListReport</con:subreports>
+  <con:subreports>TestCaseCoverageChart</con:subreports>
+  <con:subreports>TestStepParametersReport</con:subreports>
+  <con:subreports>TestStepResultsReport</con:subreports>
+  <con:subreports>TestStepSubParametersReport</con:subreports>
+  <con:subreports>TestSuiteCoverageChart</con:subreports>
+  <con:scope>PROJECT</con:scope>
+</con:reportTemplates><con:xmlTemplates xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:parameters/></con:reporting><con:sensitiveInformation/><con:authRepository/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>No Authorization</con:authProfile></con:entry></con:environmentSpec><con:tags/><con:testSuite id="648ada0e-0e7e-4b85-9d00-d8ab2f45420c" name="Pentaho Job"><con:description>The Pentaho Job Test Suite has been designed to check if the ETL job and transformation created in Penatho are available and it can be launched.
+MPORTANT - The Test Suite contains a Test Step which launches the process from this tool by calling the .bat file; The Test Step has been disabled in the project to avoid executing the process where the test phase takes place.</con:description><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="648ada0e-0e7e-4b85-9d00-d8ab2f45420cfileName">Pentaho-Job</con:setting><con:setting id="GeneratableJUnitReport@Style">Multiple Pages</con:setting><con:setting id="GeneratableJUnitReport@Folder"/></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:testCase id="982f9df2-bf51-4e57-bf2b-1f8bfdb7fc37" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Batch Job" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Batch Job Test Case contains Test Steps to run and validate the availability of the created batch job for the job and transformations execution</con:description><con:settings><con:setting id="982f9df2-bf51-4e57-bf2b-1f8bfdb7fc37fileName">Batch-Job</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateBatchFile" id="61d8b7a2-3152-4f7d-be43-7f5d042031ce"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Batch = context.testCase.getPropertyValue('BatchPath')
+File BatchFile = new File(Batch)
+
+//Validate if file exists
+BatchFile.isFile() ? log.info ("Path '" + Batch + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ExecuteBatchFile" id="783c9ae9-1843-4d3b-8d34-b46738701070" disabled="true"><con:settings/><con:config><script>//Get property value
+def BatchPath = "C:/Users/JJ/Documents/Quality_Engineer_Test//ETL_Quality_Engineer_Test.bat"
+def Batch = "cmd /c start " + BatchPath
+
+//Launching batch job
+Process proc=Runtime.getRuntime().exec(Batch) 
+proc.waitFor()</script></con:config></con:testStep><con:properties><con:property><con:name>BatchPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\ETL_Quality_Engineer_Test.bat</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>61d8b7a2-3152-4f7d-be43-7f5d042031ce</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase></con:testSuite><con:testSuite id="353fee2e-052f-4b58-99d8-0715318ed2d6" name="MySQL Database"><con:description>The MySQL Database Test Suite has been designed to check how the inserted data was saved in an assigned table after the ETL process was executed.</con:description><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="353fee2e-052f-4b58-99d8-0715318ed2d6fileName">MySQL-Database</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:testCase id="23144ff5-fb93-4b18-b752-04f1574f07d5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Attributes" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Attributes Test Case contains Test Steps to test the database columns which are not numeric and make sure the ingested data are correct without NULL values and expected results</con:description><con:settings><con:setting id="23144ff5-fb93-4b18-b752-04f1574f07d5fileName">Attributes</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="jdbc" name="NullInvoiceDate" id="3b0aed72-ba17-43c0-a314-219ecdb0e077"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT CAST(CASE WHEN Invoice_Year IS NULL THEN 0
+	  ELSE Invoice_Year
+	  END AS SIGNED INTEGER) AS Year
+FROM (SELECT DISTINCT YEAR(STR_TO_DATE(InvoiceDate, '%d/%m/%Y %T')) AS Invoice_Year
+FROM online_retail_sales.sales_summary) AS YEAR_DATE</con:query><con:assertion type="GroovyScriptAssertion" id="28dd9d20-0690-483a-8e0b-601d0d8af3c5" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def Years = holder.getNodeValue('min(//Results/ResultSet/Row/YEAR)')
+
+//Set assert
+assert Years.toInteger() > 0</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="YearInvoiceDate" id="8877a394-a4cd-45c0-8ce3-40863646a31b"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT DISTINCT YEAR(STR_TO_DATE(InvoiceDate, '%d/%m/%Y %T')) AS Invoice_Year
+FROM sales_summary
+WHERE YEAR(STR_TO_DATE(InvoiceDate, '%d/%m/%Y %T')) IS NOT NULL</con:query><con:assertion type="Simple Contains" id="d2a75f79-8960-4112-add8-b6be93faceba" name="Contains"><con:configuration><token>2011</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="CountryNumber" id="9de9d0b7-8471-4e3f-b8b0-93ac09dc5c77"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT COUNT(DISTINCT Country) AS Countries
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="2508a343-1e2c-4300-9dea-e40959883a31" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalCountry = holder.getNodeValue('//Results/ResultSet/Row/COUNTRIES')
+
+//Set assert
+assert totalCountry.toInteger() &lt;= 40</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="CountriesList" id="ef0c77e7-c118-45d6-8596-a705148a7241"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT DISTINCT Country
+FROM sales_summary</con:query><con:assertion type="Simple Contains" id="dd495f4b-b987-4428-874f-8a41e5a0b303" name="Contains"><con:configuration><token>Germany</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="443cf22f-af3f-439b-b775-cb20c04df546" name="Contains 2"><con:configuration><token>Chile</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="CustomerNumber" id="c047490e-066d-4e77-ade2-8c7c949facd9"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT COUNT(DISTINCT FullName)
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="901e230e-2522-4365-9591-0a0b500b565b" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalCustomers = holder.getNodeValue('//Results/ResultSet/Row/COUNTDISTINCTFULLNAME')
+
+//Set assert
+assert totalCustomers.toInteger() &lt; 3000</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="CustomerList" id="d3f352d5-6ff7-49ca-90b9-7089637cdc30"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT DISTINCT FullName
+FROM sales_summary</con:query><con:assertion type="Simple Contains" id="fa17d178-4da3-4084-8238-db4e9764739b" name="Contains"><con:configuration><token>Dorothy Chapman</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>3b0aed72-ba17-43c0-a314-219ecdb0e077</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>8877a394-a4cd-45c0-8ce3-40863646a31b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>ef0c77e7-c118-45d6-8596-a705148a7241</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="982df6ce-34d2-4ae6-a553-d71c1a310af6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Measures" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Measures Test Case contains Test Steps to test the database numeric columns to make sure the ingested data are correct in terms of excpected values e.g. Postive sales</con:description><con:settings><con:setting id="982df6ce-34d2-4ae6-a553-d71c1a310af6fileName">Measures</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="jdbc" name="TotalInvoices" id="7b4a2b37-d854-49d6-9538-d051d7055190"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT MIN(TotalInvoices)
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="59f576a8-d80c-46fd-8882-db41ed52f438" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalInv = holder.getNodeValue('//Results/ResultSet/Row/MINTOTALINVOICES')
+
+//Set assert
+assert totalInv.toInteger() > 0</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="TotalQty" id="203d8a19-6cd4-4a1e-9f06-dcef9839c670"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT MIN(TotalQty)
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="5d8a2d35-80fe-41cc-863a-9620949d2ee5" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalQty = holder.getNodeValue('//Results/ResultSet/Row/MINTOTALQTY')
+
+//Set assert
+assert totalQty.toInteger() > 0</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="TotalDue" id="3a3432b8-1871-4f04-961c-57ced44ab201"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT MIN(TotalDue)
+FROM sales_summary</con:query><con:assertion type="GroovyScriptAssertion" id="79e3fd95-775b-40e7-9249-dd2df3ec24ea" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml )
+def totalDue = holder.getNodeValue('//Results/ResultSet/Row/MINTOTALDUE')
+
+//Set assert
+assert totalDue.toInteger() &lt; 0</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>203d8a19-6cd4-4a1e-9f06-dcef9839c670</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7b4a2b37-d854-49d6-9538-d051d7055190</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="5a24b4ce-2bbc-4f2e-be4b-ada0529f1a89" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Columns" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Columns Test Case contains Test Steps to test if the database columns were set correctly and they remain as expected and set at the begining</con:description><con:settings><con:setting id="5a24b4ce-2bbc-4f2e-be4b-ada0529f1a89fileName">Columns</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="jdbc" name="ColumnsPositions" id="43b2091e-e6a9-400e-b5c7-591224cceb0c"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT COLUMN_NAME FROM information_schema.columns 
+WHERE table_name='sales_summary'</con:query><con:assertion type="GroovyScriptAssertion" id="089d7723-882e-42d4-a76e-f01f4dde5fb3" name="Script Assertion"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Create variables
+def Position = 3
+def Column = 'InvoiceDate'
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml)
+def ColumnName = holder.getNodeValue('//Results/ResultSet/Row['+Position+']/COLUMNS.COLUMN_NAME')
+
+//Set assert
+assert ColumnName.toString() == Column</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="6e9b88bb-d314-4dba-9340-13bce5c5e4ba" name="Script Assertion 2"><con:configuration><scriptText>//Import libraries
+import com.eviware.soapui.support.XmlHolder
+
+//Create variables
+def Position = 2
+def Column = 'Country'
+
+//Get response values
+def holder = new XmlHolder( messageExchange.responseContentAsXml)
+def ColumnName = holder.getNodeValue('//Results/ResultSet/Row['+Position+']/COLUMNS.COLUMN_NAME')
+
+//Set assert
+assert ColumnName.toString() == Column</scriptText></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="ColumnsCount" id="5d2c2ca1-ac41-47a9-a1f9-b02d20a29acd"><con:settings><con:setting id="prettyPrintResponse">true</con:setting></con:settings><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dbConnectionName>MySQL DB</con:dbConnectionName><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/online_retail_sales?user=root&amp;password=PASS_VALUE</con:connectionString><con:password>admin</con:password><con:connectionProperties/><con:query>SELECT COUNT(COLUMN_NAME) FROM information_schema.columns 
+WHERE table_name='sales_summary'</con:query><con:assertion type="Simple Contains" id="f65d83cc-2cbf-443a-adbb-c3552b9f33c9" name="Contains"><con:configuration><token>6</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase></con:testSuite><con:testSuite id="90cda47e-cd22-4d58-a58e-6ce18d413db3" name="Imported Files"><con:description>The Imported Files Test Suite has been designed to check the generated folder by the ETL process, this folder contains files which were copied as part of the process which are covered as well.</con:description><con:settings><con:setting id="90cda47e-cd22-4d58-a58e-6ce18d413db3fileName">Imported-Files</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:testCase id="8862d40e-8587-4e74-9f19-79c8be732f03" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Input Folder" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Input Folder Test Case contains Test Steps to test if the respective source files and folder are available after the process execution</con:description><con:settings><con:setting id="8862d40e-8587-4e74-9f19-79c8be732f03fileName">Input-Folder</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateInputFolder" id="d4c914f9-fd23-4763-a8bc-7e85dc2a3106"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input = new File(Path)
+
+//Validate if folder exists
+Input.isDirectory() ? log.info ("Path '" + Path + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateOnlineRetailFile" id="88ebc2fd-c72b-4b29-820a-cde47af3c414"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Online Retail - GitHub Scheckley.csv'
+Input.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateLocalCurrencyFile" id="94ab22c9-2edf-4760-a112-31a1b8348013"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'USD -  LocalCurrency.txt'
+Input.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateCustomerFile" id="d1aa887b-967c-414c-83b4-4602b220e7b5"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('InputPath')
+File Input= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Customers.xls'
+Input.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties><con:property><con:name>InputPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\Input\</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>d1aa887b-967c-414c-83b4-4602b220e7b5</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="ddd871eb-a08b-44e9-8c35-0a1e40354cda" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Input Sources" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Input Sources Test Case contains Test Steps which are used a source connection to validate the data directly</con:description><con:settings><con:setting id="ddd871eb-a08b-44e9-8c35-0a1e40354cdafileName">Input-Sources</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="OnlineRetail" id="4d180bd0-f9a3-4166-bccc-68a2d25352ea"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>Online Retail - GitHub Scheckley.csv</fileName><separator>,</separator><trim>true</trim><charset>UTF-8</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>InvoiceNo</con:property><con:property>StockCode</con:property><con:property>Description</con:property><con:property>Quantity</con:property><con:property>InvoiceDate</con:property><con:property>UnitPrice</con:property><con:property>CustomerID</con:property><con:property>Country</con:property><con:startRow>1</con:startRow><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:failOnEmpty>true</con:failOnEmpty><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:testStep type="datasource" name="Customers" id="db305517-2759-4ffd-a588-e9719a88d1ac"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>Customers.xls</file><worksheet/><cell>A2</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>CustomerID</con:property><con:property>CustomerFirstName</con:property><con:property>CustomerLastName</con:property><con:property>Age</con:property><con:startRow/><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:failOnEmpty>true</con:failOnEmpty><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:testStep type="datasource" name="LocalCurrency" id="9985e992-f1e3-45fa-af19-205eaef60e26"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>USD -  LocalCurrency.txt</fileName><separator>;</separator><trim>true</trim><charset>utf-8</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>Country</con:property><con:property>USD_LC</con:property><con:startRow>1</con:startRow><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:failOnEmpty>true</con:failOnEmpty><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>db305517-2759-4ffd-a588-e9719a88d1ac</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>4d180bd0-f9a3-4166-bccc-68a2d25352ea</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase></con:testSuite><con:testSuite id="555c07f8-bd93-4977-908d-bfae931c1391" name="Exported Files"><con:description>The Exported Files Test Suite has been designed to check the generated folder by the ETL process, this folder contains files which were generated as part of the process which are covered as well.</con:description><con:settings><con:setting id="555c07f8-bd93-4977-908d-bfae931c1391fileName">Exported-Files</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:testCase id="f55ef8d8-914c-4eb0-990f-99f1ff6c96a2" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Output Folder" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Output Folder Test Case contains Test Steps to test if the generated and exported files and folder are available after the process execution</con:description><con:settings><con:setting id="f55ef8d8-914c-4eb0-990f-99f1ff6c96a2fileName">Output-Folder</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateOutputFolder" id="32f7f3c0-6952-4fc2-a859-b94497cf7f67"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('OutputPath')
+File Output = new File(Path)
+
+//Validate if folder exists
+Output.isDirectory() ? log.info ("Path '" + Path + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateEmptyCustomerFile" id="bbac7d66-9f1c-4a1d-9dd3-b824dcfcaef8"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('OutputPath')
+File Output= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Empty Customer data.txt'
+Output.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateOnlineRetailSummary" id="cf413817-1376-4b03-b4fe-2217d4e7cbfb"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('OutputPath')
+File Output= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Online Retail Sales Summary.xls'
+Output.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties><con:property><con:name>OutputPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\Output\</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>bbac7d66-9f1c-4a1d-9dd3-b824dcfcaef8</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase id="cfcee28c-ac5a-462c-bb58-0b277b92b338" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Output Sources" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Output Sources Test Case contains Test Steps which are used a source connection to validate the data directly and check if the generated file by the process have content</con:description><con:settings><con:setting id="cfcee28c-ac5a-462c-bb58-0b277b92b338fileName">Output-Sources</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="EmptyCustomer" id="cb13c753-d6df-47af-b59f-6f864668d13f"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>Empty Customer data.txt</fileName><separator>,</separator><trim>true</trim><charset>UTF-8</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>InvoiceNo</con:property><con:property>StockCode</con:property><con:property>Description</con:property><con:property>Quantity</con:property><con:property>InvoiceDate</con:property><con:property>UnitPrice</con:property><con:property>CustomerID</con:property><con:property>Country</con:property><con:startRow>1</con:startRow><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:failOnEmpty>true</con:failOnEmpty><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:testStep type="groovy" name="CountryEmptyContent" id="ac65a9c1-5366-48a2-855a-20982c65aeb7"><con:settings/><con:config><script>//Get property value and create variable to count elements
+def Customer = context.testCase.getPropertyValue('EmptyCustomer') 
+def count = 0
+
+//Count number of lines
+File file = new File(Customer)
+def lines = file.readLines()
+for (line in lines) {
+   count++
+}
+
+//Validate if data exists
+count >0 ? log.info ("File '" + Customer + "' is not empty")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="datasource" name="Online Retail Summary" id="1af297b7-6b0a-4ac9-9231-0a64e93fcbd3"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Excel"><con:configuration><file>Online Retail Sales Summary.xls</file><worksheet/><cell>A1</cell><ignoreEmpty>false</ignoreEmpty><evaluateFormulas>false</evaluateFormulas></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>Continent</con:property><con:property>Region</con:property><con:property>CountryCode</con:property><con:property>Country</con:property><con:property>FullName</con:property><con:property>InvoiceDate</con:property><con:property>TotalInvoices</con:property><con:property>TotalQty</con:property><con:property>TotalDue</con:property><con:property>TotalLC</con:property><con:startRow>1</con:startRow><con:endRow/><con:recordsPerIteration>1</con:recordsPerIteration><con:completeLastOperation>true</con:completeLastOperation><con:failOnEmpty>true</con:failOnEmpty><con:trimValues>false</con:trimValues><con:entitizeValues>false</con:entitizeValues><con:restartOnRun>true</con:restartOnRun><con:expandProperties>false</con:expandProperties></con:config></con:testStep><con:testStep type="groovy" name="OnlineRetailCountContent" id="287dd41c-fddd-4ecf-a95c-a34a519fe863"><con:settings/><con:config><script>//Import libraries
+import jxl.*
+import jxl.write.*
+
+//Get property value and create variable to count elements
+def Summary = context.testCase.getPropertyValue('SalesSummary')
+def count
+
+//Count number of rows
+Workbook RetailSummary = Workbook.getWorkbook(new File(Summary))
+Sheet SummarySheet = RetailSummary.getSheet(0)
+count= SummarySheet.getRows().toInteger()
+RetailSummary.close()
+
+//Validate if data exists
+count >0 ? log.info ("File '" + Summary + "' is not empty")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties><con:property><con:name>EmptyCustomer</con:name><con:value>C:/Users/JJ/Documents/Quality_Engineer_Test/Output/Empty Customer data.txt</con:value></con:property><con:property><con:name>SalesSummary</con:name><con:value>C:/Users/JJ/Documents/Quality_Engineer_Test/Output/Online Retail Sales Summary.xls</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>287dd41c-fddd-4ecf-a95c-a34a519fe863</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>cb13c753-d6df-47af-b59f-6f864668d13f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>1af297b7-6b0a-4ac9-9231-0a64e93fcbd3</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase></con:testSuite><con:testSuite id="5f10608b-6ec8-4254-9d31-eb1c7f1a8ea9" name="Logs"><con:description>The Logs Test Suite has been designed to check if the job and transformation log folder and files have been created properly.</con:description><con:settings><con:setting id="5f10608b-6ec8-4254-9d31-eb1c7f1a8ea9fileName">Logs</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:properties><con:property><con:name>BatchLogPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\BatchJobLog.log</con:value></con:property></con:properties><con:reportParameters/><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec><con:testCase id="e55cc850-3cd0-4ed8-a67f-bf7418c9fe7b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Pentaho Logs" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Pentaho Logs Test Case contains Test Steps to validate if log folder and its related files were generated properly</con:description><con:settings><con:setting id="e55cc850-3cd0-4ed8-a67f-bf7418c9fe7bfileName">Pentaho-Logs</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateLogFolder" id="169ee46d-bdd5-4c3c-ab7b-4ac912568294"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('LogPath')
+File Log = new File(Path)
+
+//Validate if folder exists
+Log.isDirectory() ? log.info ("Path '" + Path + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateLogsFiles" id="092308d0-3c4f-4c85-8557-11306dfb0bf3"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult
+import groovy.io.FileType
+
+//Get property value for comparison
+def Path = context.testCase.getPropertyValue('LogPath')
+File Log= new File(Path ).listFiles()?.sort { -it.lastModified() }?.head()
+
+def BatchPath = context.testCase.testSuite.getPropertyValue('BatchLogPath')
+File Batch = new File(BatchPath)
+
+//Validate if files exist and are up to date
+Log.lastModified() >  Batch.lastModified() ? log.info ("Logs file exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties><con:property><con:name>LogPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\Logs\</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>169ee46d-bdd5-4c3c-ab7b-4ac912568294</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:environmentSpec><con:entry environmentId="f10081d4-7dbb-4f79-86ff-3b9a553e0135"><con:authProfile>Inherit From Parent</con:authProfile></con:entry></con:environmentSpec></con:testCase><con:testCase id="7685a236-3517-490e-b050-df16245a03af" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Batch Log" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:description>The Batch Log Test Case contains a Test Step to validate if after the .bat file was executed the associated log file was created</con:description><con:settings><con:setting id="7685a236-3517-490e-b050-df16245a03affileName">Batch-Log</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateBatchLogFile" id="96fbe414-6bce-4749-ab3a-cea9f2484556"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def BatchPath = context.testCase.testSuite.getPropertyValue('BatchLogPath')
+File Batch = new File(BatchPath)
+
+//Validate if file exists
+Batch.isFile() ? log.info ("Path '" + BatchPath + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase></con:testSuite></con:soapui-project>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f55ef8d8-914c-4eb0-990f-99f1ff6c96a2" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Output Folder" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:description>The Output Folder Test Case contains Test Steps to test if the generated and exported files and folder are available after the process execution</con:description><con:settings><con:setting id="f55ef8d8-914c-4eb0-990f-99f1ff6c96a2fileName">Output-Folder</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="groovy" name="ValidateOutputFolder" id="32f7f3c0-6952-4fc2-a859-b94497cf7f67"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('OutputPath')
+File Output = new File(Path)
+
+//Validate if folder exists
+Output.isDirectory() ? log.info ("Path '" + Path + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateEmptyCustomerFile" id="bbac7d66-9f1c-4a1d-9dd3-b824dcfcaef8"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('OutputPath')
+File Output= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Empty Customer data.txt'
+Output.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ValidateOnlineRetailSummary" id="cf413817-1376-4b03-b4fe-2217d4e7cbfb"><con:settings/><con:config><script>//Import libraries
+import com.eviware.soapui.model.testsuite.TestStepResult;
+import groovy.io.FileType
+
+//Get property value
+def Path = context.testCase.getPropertyValue('OutputPath')
+File Output= new File(Path)
+
+//Identify source file by name
+def flag = 0;
+final String expectedFile = 'Online Retail Sales Summary.xls'
+Output.eachFileRecurse(FileType.FILES) {
+	if(it.name.equals(expectedFile)) {
+		flag=1
+	}
+}
+
+//Validate if file exists
+flag==1 ? log.info ("File '" + expectedFile + "' exists")  : context.testRunner.fail()</script></con:config></con:testStep><con:properties><con:property><con:name>OutputPath</con:name><con:value>C:\Users\JJ\Documents\Quality_Engineer_Test\Output\</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>bbac7d66-9f1c-4a1d-9dd3-b824dcfcaef8</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

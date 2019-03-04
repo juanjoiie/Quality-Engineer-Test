@@ -1,0 +1,10 @@
+Pentaho-Job\Batch-Job.xml
+MySQL-Database\Attributes.xml
+MySQL-Database\Measures.xml
+MySQL-Database\Columns.xml
+Imported-Files\Input-Folder.xml
+Imported-Files\Input-Sources.xml
+Exported-Files\Output-Folder.xml
+Exported-Files\Output-Sources.xml
+Logs\Pentaho-Logs.xml
+Logs\Batch-Log.xml
