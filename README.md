@@ -75,9 +75,9 @@ SoapUI Testing Process
 - Imported Files 
 	- Input Folder
 		* ValidateInputFolder - Script to check if input folder created by the process exists
-		* ValidateOnlineRetailFile - Script to check if input csv file was copied successfully by the process 
-		* ValidateLocalCurrencyFile - Script to check if input txt file was copied successfully by the process 
-		* ValidateCustomerFile - Script to check if input xls file was copied successfully by the process 
+		* ValidateOnlineRetailFile - Script to check if input csv file was copied by the process 
+		* ValidateLocalCurrencyFile - Script to check if input txt file was copied by the process 
+		* ValidateCustomerFile - Script to check if input xls file was copied by the process 
 	- Input Sources
 		* OnlineRetail - Data source step to navigate the csv file
 		* Customers - Data source step to navigate the xls file
@@ -85,8 +85,8 @@ SoapUI Testing Process
 - Exported Files 
 	- Output Folder
 		* ValidateOutputFolder - Script to check if output folder created by the process exists
-		* ValidateEmptyCustomerFile - Script to check if output txt file was generated and exported successfully by the process 
-		* ValidateOnlineRetailSummaryFile - Script to check if output xls file was generated and exported successfully by the process 
+		* ValidateEmptyCustomerFile - Script to check if output txt file was generated and exported by the process 
+		* ValidateOnlineRetailSummaryFile - Script to check if output xls file was generated and exported by the process 
 	- Output Sources
 		* EmptyCustomer - Data source step to navigate the txt file
 		* EmptyCustomerCountContent - Script which review if exported txt file contains data 
