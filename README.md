@@ -51,4 +51,50 @@ Pentaho ETL process
     
 SoapUI Testing Process
 
-- All tests are described in the description field within the SoapUI project.
+- All Test Suit and Test Cases are described in the description field within the SoapUI project. See below a brief description of the covered Test Steps.
+
+- Pentaho Job 
+	- Batch Job
+		* ValidateBatchFile - It checks through a script if the .bat file to launch the Pentaho Job and Trsnsformations exist
+		* ExecuteBatchFile - Script which runs the .bat file to start the Pentaho process
+- MySQL Database 
+	- Attributes
+		* NullInvoiceDate - JDBC request to check if there are invalid dates
+		* YearInvoiceDate - JDBC request to review the contained years
+		* CountryNumber - JDBC request to know the number of countries
+		* CountriesList - JDBC request to review the contained countries
+		* CustomerNumber - JDBC request to know the number of customers
+		* CustomerList - JDBC request to review the contained customer names
+	- Measures
+		* TotalInvoices - JDBC request to validate if the invoice number are valid (positive number)
+		* TotalQty - JDBC request to validate if the quantity products are valid (positive number)
+		* TotalDue - JDBC request to validate if the sales values are valid (positive number)
+	- Columns
+		* ColumnsPositions - JDBC request to check if the db table column are positioned as expected
+		* ColumnsCount - JDBC request to check how many columns the db table has as expected
+- Imported Files 
+	- Input Folder
+		* ValidateInputFolder - Script to check if input folder created by the process exists
+		* ValidateOnlineRetailFile - Script to check if input csv file was copied successfully by the process 
+		* ValidateLocalCurrencyFile - Script to check if input txt file was copied successfully by the process 
+		* ValidateCustomerFile - Script to check if input xls file was copied successfully by the process 
+	- Input Sources
+		* OnlineRetail - Data source step to navigate the csv file
+		* Customers - Data source step to navigate the xls file
+		* LocalCurrency - Data source step to navigate the txt file
+- Exported Files 
+	- Output Folder
+		* ValidateOutputFolder - Script to check if output folder created by the process exists
+		* ValidateEmptyCustomerFile - Script to check if output txt file was generated and exported successfully by the process 
+		* ValidateOnlineRetailSummaryFile - Script to check if output xls file was generated and exported successfully by the process 
+	- Output Sources
+		* EmptyCustomer - Data source step to navigate the txt file
+		* EmptyCustomerCountContent - Script which review if exported txt file contains data 
+		* OnlineRetalSummary - Data source step to navigate the xls file
+		* OnlineRetailCountContent - Script which review if exported xls file contains data
+- Logs
+	-Pentaho Logs
+		* ValidateLogFolder - Script to check if log folder created by the process exists
+		* ValidateLogFiles - Script to check if log file was generated and exported successfully by the process
+	-Batch Log
+		* ValidateBatchLogFile - Script to check if batch log file was generated and exported successfully by the process
