@@ -93,8 +93,8 @@ SoapUI Testing Process
 		* OnlineRetalSummary - Data source step to navigate the xls file
 		* OnlineRetailCountContent - Script which review if exported xls file contains data
 - Logs
-	-Pentaho Logs
+	- Pentaho Logs
 		* ValidateLogFolder - Script to check if log folder created by the process exists
 		* ValidateLogFiles - Script to check if log file was generated and exported successfully by the process
-	-Batch Log
+	- Batch Log
 		* ValidateBatchLogFile - Script to check if batch log file was generated and exported successfully by the process
