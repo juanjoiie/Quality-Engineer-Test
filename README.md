@@ -51,50 +51,120 @@ Pentaho ETL process
     
 SoapUI Testing Process
 
-- All Test Suit and Test Cases are described in the description field within the SoapUI project. See below a brief description of the covered Test Steps.
+- All Test Suits and Test Cases are described in the description field within the SoapUI project. See below a description of the covered Test Steps.
 
-- Pentaho Job 
-	- Batch Job
-		* ValidateBatchFile - It checks through a script if the .bat file to launch the Pentaho Job and Trsnsformations exist
-		* ExecuteBatchFile - Script which runs the .bat file to start the Pentaho process
-- MySQL Database 
-	- Attributes
-		* NullInvoiceDate - JDBC request to check if there are invalid dates
-		* YearInvoiceDate - JDBC request to review the contained years
-		* CountryNumber - JDBC request to know the number of countries
-		* CountriesList - JDBC request to review the contained countries
-		* CustomerNumber - JDBC request to know the number of customers
-		* CustomerList - JDBC request to review the contained customer names
-	- Measures
-		* TotalInvoices - JDBC request to validate if the invoice number are valid (positive number)
-		* TotalQty - JDBC request to validate if the quantity products are valid (positive number)
-		* TotalDue - JDBC request to validate if the sales values are valid (positive number)
-	- Columns
-		* ColumnsPositions - JDBC request to check if the db table column are positioned as expected
-		* ColumnsCount - JDBC request to check how many columns the db table has as expected
-- Imported Files 
-	- Input Folder
-		* ValidateInputFolder - Script to check if input folder created by the process exists
-		* ValidateOnlineRetailFile - Script to check if input csv file was copied by the process 
-		* ValidateLocalCurrencyFile - Script to check if input txt file was copied by the process 
-		* ValidateCustomerFile - Script to check if input xls file was copied by the process 
-	- Input Sources
-		* OnlineRetail - Data source step to navigate the csv file
-		* Customers - Data source step to navigate the xls file
-		* LocalCurrency - Data source step to navigate the txt file
-- Exported Files 
-	- Output Folder
-		* ValidateOutputFolder - Script to check if output folder created by the process exists
-		* ValidateEmptyCustomerFile - Script to check if output txt file was generated and exported by the process 
-		* ValidateOnlineRetailSummaryFile - Script to check if output xls file was generated and exported by the process 
-	- Output Sources
-		* EmptyCustomer - Data source step to navigate the txt file
-		* EmptyCustomerCountContent - Script which review if exported txt file contains data 
-		* OnlineRetalSummary - Data source step to navigate the xls file
-		* OnlineRetailCountContent - Script which review if exported xls file contains data
-- Logs
-	- Pentaho Logs
-		* ValidateLogFolder - Script to check if log folder created by the process exists
-		* ValidateLogFiles - Script to check if log file was generated and exported successfully by the process
-	- Batch Log
-		* ValidateBatchLogFile - Script to check if batch log file was generated and exported successfully by the process
+* Test Suite - Pentaho Job 
+  * Test Case - Batch Job
+    * Test Steps (Property value - Batch file path)
+		- ValidateBatchFile - It checks through a script if the .bat file to launch the Pentaho Job and Transformations exist
+			+ Input - Batch file path
+			+ Expected Output - Batch file located in path
+		- ExecuteBatchFile - Script which runs the .bat file to start the Pentaho process
+			+ Input - Batch file path
+			+ Expected Output - Batch file execution (CMD)
+* Test Suite - MySQL Database 
+  * Test Case - Attributes
+	* Test Steps
+		- NullInvoiceDate - JDBC request to check if there are invalid dates
+			+ Input - Query with contained years
+			+ Expected Output - Valid assertion with years higher than 0 (or defined by business rule e.g. >= 2000)
+		- YearInvoiceDate - JDBC request to review the contained years
+			+ Input - Query with contained years
+			+ Expected Output - Valid assertion with year entered by user 
+		- CountryNumber - JDBC request to know the number of countries
+			+ Input - Query with total country number
+			+ Expected Output - Valid assertion with total number less or equal to 40 (or defined by business rule e.g. = 50) 
+		- CountriesList - JDBC request to review the contained countries
+			+ Input - Query with list of countries names
+			+ Expected Output - Valid assertion with country name entered by user 
+		- CustomerNumber - JDBC request to know the number of customers
+			+ Input - Query with total customers number
+			+ Expected Output - Valid assertion with total customer less than 3000 (or defined by business rule e.g. >= 2250 and <= 2705)
+		- CustomerList - JDBC request to review the contained customer names
+			+ Input - Query with list of customers names
+			+ Expected Output - Valid assertion with customer name entered by user 
+  * Test Case - Measures
+	* Test Steps
+		- TotalInvoices - JDBC request to validate if the invoice number are valid (positive number)
+			+ Input - Query with minimum total invoice number
+			+ Expected Output - Valid assertion with total invoice number higher than 0 (or defined by business rule e.g. = 0)		
+		- TotalQty - JDBC request to validate if the quantity products are valid (positive number)
+			+ Input - Query with minimum total quantity number
+			+ Expected Output - Valid assertion with total quantity number higher than 0 (or defined by business rule e.g. >= -50 and <= 50)
+		- TotalDue - JDBC request to validate if the sales values are valid (positive number)
+			+ Input - Query with minimum total due number
+			+ Expected Output - Valid assertion with total due number higher than 0 (or defined by business rule e.g. >= -99999)
+  * Test Case - Columns
+	* Test Steps
+		- ColumnsPositions - JDBC request to check if the db table column are positioned as expected
+			+ Input - Query with column name and position in DB
+			+ Expected Output - Valid assertion with correct column position and defined name 
+		- ColumnsCount - JDBC request to check how many columns the db table has as expected
+			+ Input - Query with total columns number
+			+ Expected Output - Valid assertion with total number equal to 6 (or defined by business rule e.g. = > 0 and <=8)  
+* Test Suite - Imported Files 
+  * Test Case - Input Folder (Property value - Input folder path)
+	* Test Steps
+		- ValidateInputFolder - Script to check if input folder created by the process exists
+			+ Input - Input folder path
+			+ Expected Output - Input folder located in path
+		- ValidateOnlineRetailFile - Script to check if input csv file was copied successfully by the process 
+			+ Input - File name path
+			+ Expected Output - File name located in path
+		- ValidateLocalCurrencyFile - Script to check if input txt file was copied successfully by the process 
+			+ Input - File name path
+			+ Expected Output - File name located in path
+		- ValidateCustomerFile - Script to check if input xls file was copied successfully by the process 
+			+ Input - File name path
+			+ Expected Output - File name located in path
+  * Test Case - Input Sources
+	* Test Steps
+		- OnlineRetail - Data source step to navigate the csv file
+			+ Input - Data source configuration
+			+ Expected Output - Data source view opened
+		- Customers - Data source step to navigate the xls file
+			+ Input - Data source configuration
+			+ Expected Output - Data source view opened
+		- LocalCurrency - Data source step to navigate the txt file
+			+ Input - Data source configuration
+			+ Expected Output - Data source view opened
+* Test Suite - Exported Files 
+  * Test Case - Output Folder (Property value - Output folder path)
+	* Test Steps
+		- ValidateOutputFolder - Script to check if output folder created by the process exists
+			+ Input - Output folder path
+			+ Expected Output - Output folder located in path
+		- ValidateEmptyCustomerFile - Script to check if output txt file was generated and exported successfully by the process 
+			+ Input - File name path
+			+ Expected Output - File name located in path
+		- ValidateOnlineRetailSummaryFile - Script to check if output xls file was generated and exported successfully by the process 
+			+ Input - File name path
+			+ Expected Output - File name located in path
+  * Test Case - Output Sources (Property value - Output files path)
+	* Test Steps
+		- EmptyCustomer - Data source step to navigate the txt file
+			+ Input - Data source configuration
+			+ Expected Output - Data source view opened
+		- EmptyCustomerCountContent - Script which review if exported txt file contains data 
+			+ Input - Connection to txt file
+			+ Expected Output - Valid assertion with total number of records higher than 0 (or defined by business rule e.g. > 999)
+		- OnlineRetalSummary - Data source step to navigate the xls file
+			+ Input - Data source configuration
+			+ Expected Output - Data source view opened
+		- OnlineRetailCountContent - Script which review if exported xls file contains data
+			+ Input - Connection to xls file
+			+ Expected Output - Valid assertion with total number of records higher than 0 (or defined by business rule e.g. >=1 and <=10000)
+* Test Suite - Logs (Property value - Batch logs file path)
+  * Test Case - Pentaho Logs (Property value - Logs folder path)
+	* Test Steps
+		- ValidateLogFolder - Script to check if log folder created by the process exists
+			+ Input - Log folder path
+			+ Expected Output - Log folder located in path
+		- ValidateLogFiles - Script to check if log file was generated and exported successfully by the process
+			+ Input - Logs file path
+			+ Expected Output - Logs file located in path
+  * Test Case - Batch Log 
+	* Test Step 
+		- ValidateBatchLogFile - Script to check if batch log file was generated and exported successfully by the process
+			+ Input - Batch log file path
+			+ Expected Output - Batch log file located in path
