@@ -9,7 +9,7 @@ File BatchFile = new File(Batch)
 
 //Validate if file exists
 BatchFile.isFile() ? log.info ("Path '" + Batch + "' exist")  : context.testRunner.fail()</script></con:config></con:testStep><con:testStep type="groovy" name="ExecuteBatchFile" id="783c9ae9-1843-4d3b-8d34-b46738701070" disabled="true"><con:settings/><con:config><script>//Get property value
-def BatchPath = "C:/Users/JJ/Documents/Quality_Engineer_Test//ETL_Quality_Engineer_Test.bat"
+def BatchPath = context.testCase.getPropertyValue('BatchPath')
 def Batch = "cmd /c start " + BatchPath
 
 //Launching batch job
