@@ -6,10 +6,10 @@
 flowchart TD
     %% ===== v1.1.0 =====
     subgraph v1_1_0["v1.1.0: First output_table ingestion"]
-        outlets_info["outlets_info\n---\nPK: outlet_id\ncountry\nregion"]
-        curr_exchange["curr_exchange\n---\nPK: country\nex_loc_to_eur"]
-        sales_daily["sales_daily\n---\nPK: country+sales_date+outlet_id\nFK: outlet_id, product_id"]
-        output_table["output_table\n---\nPK: country+sales_date+outlet_id\nFK: outlet_id"]
+        outlets_info["outlets_info: outlet_id,country,region"]
+        curr_exchange["curr_exchange: country,loc_to_eur"]
+        sales_daily["sales_daily: country,sales_date,outlet_id"]
+        output_table["output_table: country,sales_date,outlet_id"]
 
         outlets_info -->|1:N| sales_daily
         curr_exchange -->|1:N| sales_daily
@@ -18,13 +18,13 @@ flowchart TD
 
     %% ===== v1.2.0 =====
     subgraph v1_2_0["v1.2.0: Add products_info"]
-        products_info["products_info\n---\nPK: product_id\nis_own_brand"]
+        products_info["products_info,product_id,is_own_brand"]
         products_info -->|1:N| sales_daily
     end
 
     %% ===== v1.3.0 =====
     subgraph v1_3_0["v1.3.0: Replace curr_exchange_v2"]
-        curr_exchange_v2["curr_exchange_v2\n---\nPK: country+rate_date\nex_loc_to_eur"]
+        curr_exchange_v2["curr_exchange_v2: country,rate_date,loc_to_eur"]
         curr_exchange_v2 -->|1:N| sales_daily
     end
 
