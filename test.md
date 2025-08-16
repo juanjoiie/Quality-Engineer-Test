@@ -5,7 +5,7 @@
 %% MermaidJS Diagram (renders in Markdown-compatible tools)
 flowchart TD
     %% ===== v1.1.0 =====
-    subgraph v1_1_0["v1.1.0: First output_table ingestion"]
+    subgraph v1_1_0["v1.1.0: output_table pipeline"]
         outlets_info["<b>outlets_info</b>
                                     outlet_id(PK)
                                     outlet_name
