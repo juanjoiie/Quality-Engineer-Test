@@ -13,7 +13,7 @@ flowchart TD
                                     region
                                     address
                                     zipcode"]
-        curr_exchange["curr_exchange
+        curr_exchange["<b>curr_exchange</b>
                                       country(PK)
                                       ex_loc_to_eur"]
         sales_daily["sales_daily
@@ -25,7 +25,7 @@ flowchart TD
                                   brand
                                   sales_qty
                                   sales_value"]
-        output_table["output_table:
+        output_table["<b>output_table</b>
                                     country(PK,FK)
                                     sales_date(PK,FK)
                                     outlet_id(PK,FK)
@@ -41,7 +41,7 @@ flowchart TD
 
     %% ===== v1.2.0 =====
     subgraph v1_2_0["v1.2.0: Add products_info"]
-        products_info["products_info
+        products_info["<b>products_info</b>
                                       product_id(PK)
                                       is_own_brand"]
         products_info -->|1:N| sales_daily
@@ -49,7 +49,7 @@ flowchart TD
 
     %% ===== v1.3.0 =====
     subgraph v1_3_0["v1.3.0: Replace curr_exchange_v2"]
-        curr_exchange_v2["curr_exchange_v2
+        curr_exchange_v2["<b>curr_exchange_v2</b>
                                             country(PK)
                                             rate_date(PK)
                                             loc_to_eur"]
