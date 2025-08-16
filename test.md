@@ -6,7 +6,8 @@
 flowchart TD
     %% ===== v1.1.0 =====
     subgraph v1_1_0["v1.1.0: First output_table ingestion"]
-        outlets_info["outlets_info: outlet_id\ncountry\nregion"]
+        outlets_info["outlets_info: outlet_id/ncountry
+                                    region"]
         curr_exchange["curr_exchange: country\nloc_to_eur"]
         sales_daily["sales_daily: country\nsales_date\noutlet_id"]
         output_table["output_table: country\nales_date\noutlet_id"]
